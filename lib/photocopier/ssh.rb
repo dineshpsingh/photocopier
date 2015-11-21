@@ -112,6 +112,7 @@ module Photocopier
       command << "-p #{opts[:port]} " if opts[:port].present?
       command << "#{opts[:user]}@" if opts[:user].present?
       command << opts[:host]
+      command << " -i  #{opts[:keys]}" if opts[:keys].present?
       if opts[:password]
         command = "sshpass -p #{opts[:password]} #{command}"
       end
